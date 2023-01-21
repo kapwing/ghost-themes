@@ -12,11 +12,9 @@
             </h2>
 
             <div class="gh-topic-content">
-                {{#get "posts" include="authors" limit="7"}}
-                    {{#foreach posts}}
-                        {{> "loop-grid"}}
-                    {{/foreach}}
-                {{/get}}
+                {{#foreach posts limit="7"}}
+                    {{> "loop-grid"}}
+                {{/foreach}}
             </div>
 
             <footer class="gh-topic-footer">
@@ -32,18 +30,6 @@
                     {{> "topic-grid"}}
                 {{/foreach}}
             {{/get}}
-
-            {{#if @custom.enter_tag_slugs_for_secondary_sections}}
-                {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
-                    {{#if tags}}
-                        <div class="gh-topic-list">
-                            {{#foreach tags}}
-                                {{> "topic-minimal"}}
-                            {{/foreach}}
-                        </div>
-                    {{/if}}
-                {{/get}}
-            {{/if}}
         {{else}}
             {{#match posts.length ">" 1}}
                 {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
@@ -51,7 +37,21 @@
                         {{> "topic-grid"}}
                     {{/foreach}}
                 {{/get}}
+            {{/match}}
+        {{/if}}
 
+        {{#if @custom.enter_tag_slugs_for_secondary_sections}}
+            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
+                {{#if tags}}
+                    <div class="gh-topic-list">
+                        {{#foreach tags}}
+                            {{> "topic-minimal"}}
+                        {{/foreach}}
+                    </div>
+                {{/if}}
+            {{/get}}
+        {{else}}
+            {{#match posts.length ">" 1}}
                 {{#get "tags" include="count.posts" order="count.posts desc"}}
                     {{#if tags.[3]}}
                         <div class="gh-topic-list">

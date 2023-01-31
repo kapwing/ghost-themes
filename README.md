@@ -15,6 +15,8 @@ yarn symlink --theme headline --site ~/sites/test-ghost
 yarn symlink --theme ease --site ~/sites/test-ghost
 ```
 
+To create a local ghost instance for testing, follow the instructions here: https://ghost.org/docs/install/local/. On my machine, I created a new directory called `test-ghost`, and this is where I created the local ghost instance that I use for testing theme development.
+
 To create an installable theme zip file in packages/headline/dist/:
 
 # create .zip file

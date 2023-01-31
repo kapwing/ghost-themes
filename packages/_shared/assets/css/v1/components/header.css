@@ -128,9 +128,9 @@
         display: none;
     }
 
-    body:not(.is-dropdown-loaded) .gh-head-menu .nav > li {
-        opacity: 0;
-    }
+    /* body:not(.is-dropdown-loaded) .gh-head-menu .nav > li { */
+    /* opacity: 0; */
+    /* } */
 }
 
 /* Header variants
@@ -355,7 +355,8 @@ Search                         LOGO                    Login Subscribe
     visibility: hidden;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 7px 20px -5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
+        0 7px 20px -5px rgba(0, 0, 0, 0.15);
     opacity: 0;
     transition: opacity 0.3s, transform 0.2s;
     transform: translate3d(0, 6px, 0);
@@ -525,12 +526,17 @@ Search                         LOGO                    Login Subscribe
         -webkit-overflow-scrolling: touch;
     }
 
-    .is-head-open:not(.is-head-brand):not(.is-head-dark):not(.is-head-transparent) #gh-head {
+    .is-head-open:not(.is-head-brand):not(.is-head-dark):not(
+            .is-head-transparent
+        )
+        #gh-head {
         background-color: var(--color-white);
     }
 
     .is-head-open.is-head-transparent #gh-head,
-    .is-head-open:is(.is-head-transparent, .is-head-brand) #gh-head .gh-head-actions {
+    .is-head-open:is(.is-head-transparent, .is-head-brand)
+        #gh-head
+        .gh-head-actions {
         background-color: var(--ghost-accent-color);
     }
 

@@ -6,6 +6,8 @@ This fork is preserved so that it is easy to update changes from the original mo
 
 To run a theme locally, you need to symlink a theme to your local Ghost site. On my local machine, I've started a ghost deployment in the `test-ghost` directory, so I use the symlink command to copy this theme into there:
 
+Sometimes for reasons unclear to me, the themes built by gulp in this repo don't match what they should be when built for the marketplace. So the easier way to update themes is sometimes to download the version available from your local ghost deployment (from ghost -> settings -> design) and then edit that open and just copy it into this repo. Make sure to check for dropdown menus and title link colors.
+
 ```
 # run a theme locally
 yarn install

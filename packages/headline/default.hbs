@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900&display=swap" rel="stylesheet">
+
 
     {{ghost_head}}
 </head>
@@ -17,12 +19,13 @@
         <div class="gh-head-inner gh-inner">
             <div class="gh-head-brand">
                 <div class="gh-head-brand-wrapper">
-                    <a class="gh-head-logo" href="{{@site.url}}">
+                    <a class="gh-head-logo" href="https://www.kapwing.com/">
                         {{#if @site.logo}}
                             <img src="{{@site.logo}}" alt="{{@site.title}}">
                             {{#if @custom.white_publication_logo_for_transparent_header}}
                                 <img src="{{@custom.white_publication_logo_for_transparent_header}}" alt="{{@site.title}}">
                             {{/if}}
+                            <h1>KAPWING</h1>
                         {{else}}
                             {{@site.title}}
                         {{/if}}
@@ -49,16 +52,8 @@
                 {{else}}
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     <div class="gh-head-members">
-                        {{#unless @member}}
-                            {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                            {{else}}
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
-                            {{/unless}}
-                        {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
-                        {{/unless}}
+                        <a class="gh-head-link" href="https://www.kapwing.com/signin">Sign in</a>
+                        <a class="gh-head-btn gh-btn gh-primary-btn" href="https://www.kapwing.com/studio/editor">Start editing</a>
                     </div>
                 {{/unless}}
             </div>
@@ -69,21 +64,11 @@
 
     <footer class="gh-foot gh-outer">
         <div class="gh-foot-inner gh-inner">
-            {{#if @site.members_enabled}}
-            {{#unless @member}}
-                <section class="gh-subscribe">
-                    <h3 class="gh-subscribe-title">Subscribe to {{@site.title}}</h3>
-                    {{#if @custom.email_signup_text}}
-                        <div class="gh-subscribe-description">{{@custom.email_signup_text}}</div>
-                    {{/if}}
-                    <button class="gh-subscribe-btn gh-btn" data-portal="signup">{{> "icons/email"}} Subscribe now</button>
-                </section>
-            {{/unless}}
-            {{/if}}
-
-            <nav class="gh-foot-menu">
-                {{navigation type="secondary"}}
-            </nav>
+            <section class="gh-subscribe">
+                <h3 class="gh-subscribe-title">Create content faster with Kapwing's online video editor</h3>
+                <div class="gh-subscribe-description">Edit videos online, collaborate with your team, and reformat your content to fit every platform with Kapwing's creative studio. Get started now for free.</div>
+                <a class="gh-subscribe-btn gh-btn">{{> "icons/movie"}} Try for free {{> "icons/arrow"}}</a>
+            </section>
 
             <div class="gh-copyright">
                 {{#unless @custom.footer_text}}

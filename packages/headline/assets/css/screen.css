@@ -41,6 +41,18 @@ body.is-head-transparent .gh-head-logo img + img {
     opacity: 1;
 }
 
+.gh-head-logo {
+    display: flex;
+    align-items: center;
+}
+
+.gh-head-logo h1 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    font-family: Raleway, sans-serif;
+}
+
 .is-head-transparent .gh-head-logo img:first-of-type:not(:only-child) {
     display: block;
     opacity: 0;
@@ -616,7 +628,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 .gh-subscribe-btn {
     margin-top: 40px;
-    color: var(--color-darker-gray);
+    color: var(--color-darker-gray) !important;
     letter-spacing: -0.011em;
     background-color: var(--color-white);
 }

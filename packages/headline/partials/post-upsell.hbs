@@ -1,13 +1,8 @@
-<a href="https://www.kapwing.com/signin" id="post-upsell">Create content faster with Kapwing's online video editor&nbsp;&rarr; </a>
+<a href="https://www.kapwing.com/signin" id="post-upsell" class="utm-tracked" data-utm-campaign="inline cta">Create content faster with Kapwing's online video editor&nbsp;&rarr; </a>
 <script>
 	(() => {
 		const isResources = !(typeof window !== "undefined" && window.location.pathname.includes("/blog/"));
 		const upsell = document.body.querySelector("a#post-upsell")
-		const kapwing_url = new URL("https://www.kapwing.com/signin")
-		kapwing_url.searchParams.set("utm_medium", "sem")
-		kapwing_url.searchParams.set("utm_source", isResources ? "resources" : "blog")
-		kapwing_url.searchParams.set("utm_campaign", "inline cta")
-		upsell.href = String(kapwing_url)
 		const p_tags = Array.from(document.body.querySelectorAll("section.gh-content p"))
 
 		if (!upsell) return;

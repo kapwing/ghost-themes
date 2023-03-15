@@ -53,7 +53,7 @@
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     <div class="gh-head-members">
                         <a class="gh-head-link" href="https://www.kapwing.com/signin">Sign in</a>
-                        <a class="gh-head-btn gh-btn gh-primary-btn" href="https://www.kapwing.com/studio/editor">Start editing</a>
+                        <a class="gh-head-btn gh-btn gh-primary-btn utm-tracked" data-utm-campaign="start editing button" href="https://www.kapwing.com/studio/editor">Start editing</a>
                     </div>
                 {{/unless}}
             </div>
@@ -89,6 +89,23 @@
 {{/is}}
 
 <script src="{{asset "built/main.min.js"}}"></script>
+<script>
+    (() => {
+        const isResources = !(typeof window !== "undefined" && window.location.pathname.includes("/blog/"));
+        const links = Array.from(document.body.querySelectorAll(".utm-tracked"))
+        console.log({ links })
+
+        for (const link of links) {
+            const url = new URL(link.href);
+            url.searchParams.set("utm_medium", "sem")
+            url.searchParams.set("utm_source", isResources ? "resources" : "blog")
+            if (link.dataset.utmCampaign) {
+                url.searchParams.set("utm_campaign", link.dataset.utmCampaign)
+            }
+            link.href = String(url)
+        }
+    })();
+</script>
 
 {{ghost_foot}}
 

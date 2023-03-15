@@ -45,17 +45,11 @@
             </nav>
 
             <div class="gh-head-actions">
-                {{#unless @site.members_enabled}}
-                    {{^match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{else}}
-                    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
-                    <div class="gh-head-members">
-                        <a class="gh-head-link" href="https://www.kapwing.com/signin">Sign in</a>
-                        <a class="gh-head-btn gh-btn gh-primary-btn utm-tracked" data-utm-campaign="start editing button" href="https://www.kapwing.com/studio/editor">Start editing</a>
-                    </div>
-                {{/unless}}
+                <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+                <div class="gh-head-members">
+                    <a class="gh-head-link" href="https://www.kapwing.com/signin">Sign in</a>
+                    <a class="gh-head-btn gh-btn gh-primary-btn utm-tracked" data-utm-campaign="start editing button" href="https://www.kapwing.com/studio/editor">Start editing</a>
+                </div>
             </div>
         </div>
     </header>
@@ -93,7 +87,6 @@
     (() => {
         const isResources = !(typeof window !== "undefined" && window.location.pathname.includes("/blog/"));
         const links = Array.from(document.body.querySelectorAll(".utm-tracked"))
-        console.log({ links })
 
         for (const link of links) {
             const url = new URL(link.href);

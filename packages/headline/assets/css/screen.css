@@ -892,7 +892,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 #post-upsell {
     margin: 30px 0;
     font-size: 1.2em;
-    color: var(--color-darker-gray);
+    color: var(--ghost-accent-color);
     font-weight: 700;
     text-decoration: none;
 }

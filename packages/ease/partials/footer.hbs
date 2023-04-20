@@ -1,300 +1,661 @@
+
 <style>
-    @import
-    url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
-    .kapwing-footer-container { width: 100%; max-width: 1200px; margin: 0px
-    auto; display: flex; justify-content: center; min-height: 400px; padding:
-    80px 20px 80px 20px; background: white; } .kapwing-footer-column { width:
-    20%; } .kapwing-logo { font-family: Raleway, sans-serif; color: #31343e;
-    font-weight: 800; font-size: 24px; } .kapwing-footer-icon-container {
-    display: flex; flex-wrap: wrap; } .footer-follow-link { margin-bottom: 5px;
-    } .kapwing-footer-icon { -webkit-box-align: center; -ms-flex-align: center;
-    align-items: center; border-radius: 50%; display: -webkit-box; display:
-    -ms-flexbox; display: flex; height: 32px; -webkit-box-pack: center;
-    -ms-flex-pack: center; justify-content: center; text-align: center; width:
-    32px; margin-right: 5px; } .kapwing-footer-icon-image { border-radius: 50%;
-    width: 100%; } .footer-youtube-icon-container { background: red; color:
-    white; } .kapwing-footer-column-header { font-weight: 600; }
-    .footer-link-column-link { display: block; } .footer-link-column-header {
-    font-weight: 600; display: block; margin-bottom: 10px; }
-    .footer-link-column-link { color: #31343e; font-size: 15px; }
-    .footer-link-column-link:hover { text-decoration: underline; color: #31343e
-    !important; } .footer-link-column-link-last { display: block; margin-top:
-    10px; } @media (max-width: 768px) { .kapwing-footer-container { display:
-    block; width: 100%; padding-top: 0px; padding-bottom: 40px; }
-    .kapwing-footer-column { width: 100%; margin-top: 20px; } }
-    .footer-company-header { font-weight: 800; color: #31343e; margin-bottom:
-    5px; font-size: 22px; display: flex; align-items: center; }
-    .footer-company-header a { color: #31343e; font-family: Raleway, sans-serif;
-    font-weight: 800; margin-left: 5px; } .footer-company-header a:hover {
-    text-decoration: none; } .footer-follow-link { display: inline-block;
-    margin: 5px; margin-left: 0px; transition: 0.2s; outline: 0; border: 0px
-    !important; vertical-align: top; } .footer-follow-link:hover { cursor:
-    pointer; opacity: 0.8; } .footer-instagram-icon-container { border-radius:
-    50%; width: 28px; height: 28px; text-align: center; }
-    .footer-instagram-image { width: 100%; border-radius: 50%; } @media
-    (max-width: 768px) { .footer-link-column-link { margin-top: 10px;
-    margin-bottom: 12px; } .footer-link-column-header { margin-top: 30px;
-    margin-bottom: 20px; } }
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+.footerText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  margin: 0px auto;
+  color: #303030;
+  text-align: center;
+  max-width: 400px;
+}
+
+.footerText b {
+  color: #606060;
+}
+
+.companyHeader {
+  font-weight: 800;
+  color: #303030;
+  margin-bottom: 5px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.companyHeader a {
+  color: #303030;
+  font-family: Raleway, sans-serif;
+  font-weight: 900;
+  margin-left: 5px;
+}
+
+.columnHeader {
+  font-weight: 800;
+  font-size: 16px;
+  color: #303030;
+  font-family: Raleway, sans-serif;
+}
+
+.footer-link-column-link {
+  display: block;
+  font-size: 14px;
+  border: 0px !important;
+  margin-bottom: 5px;
+  line-height: 1.4;
+  text-decoration: none;
+  color: #303030;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .footer-link-column-link {
+    margin-bottom: 24px;
+  }
+}
+
+.footer-link-column-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-link-column-link-last {
+  margin-top: 15px;
+}
+
+.footer-div {
+  --background-color: white;
+  --column-text-color: #303030;
+  --logo-color: #303030;
+  --iconography-color: #888;
+}
+
+.footer-div.dark {
+  --background-color: #202020;
+  --column-text-color: #e0e0e0;
+  --logo-color: white;
+  --iconography-color: white;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0px auto;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 1200px) {
+    .footer-container {
+    
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        ". . . . ."
+        "logo logo logo logo logo";
+  
+    }
+}
+
+@media (max-width: 1024px) {
+.footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      "logo logo logo";
+}
+
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        ". ."
+        ". ."
+        ". ."
+        "logo logo";
+    }
+}
+
+.footer-company {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-width: 1200px) {
+    .footer-company {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        grid-area: logo;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-company {
+        width: 100%;
+        grid-area: logo;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.footer-company-header {
+  font-weight: 800;
+  color: var(--logo-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-company-header a {
+  color: var(--logo-color);
+  font-family: Raleway, sans-serif;
+  font-weight: 900;
+  margin-left: 5px;
+}
+
+.footer-company-header a:hover {
+    text-decoration: none;
+}
+
+.footer-link-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .footer-link-column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.footer-link-column-header {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--column-text-color);
+  font-family: Raleway, sans-serif;
+}
+
+.footer-follow-link {
+  display: inline-block;
+  margin: 5px;
+  margin-left: 0px;
+  transition: 0.2s;
+  outline: 0;
+  border: 0px !important;
+  vertical-align: top;
+}
+@media (max-width: 768px) {
+.footer-follow-link {
+    margin: 15px;
+  }
+}
+.footer-follow-link:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.footer-div {
+  background: var(--background-color);
+  color: var(--iconography-color);
+  display: table;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 200px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.footer-link-column-links-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-right: 10px;
+}
+
+.footer-link-column-link {
+  display: block;
+  font-size: 14px;
+  border: 0px !important;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: var(--column-text-color);
+  font-family: "Open Sans", sans-serif;
+}
+
+
+@media (max-width: 768px) {
+    .footer-link-column-link {
+    margin-bottom: 20px;
+  }
+}
+.footer-link-column-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-link-column-link-last {
+  margin-top: 15px;
+}
+
+.footer-youtube-icon-container {
+  background: red;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.footer-youtube-icon {
+  font-size: 20px;
+  color: white;
+  vertical-align: center;
+}
+
+.footer-instagram-icon-container {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+}
+
+.footer-instagram-image {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.footer-discord-image {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.footerText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  color: var(--column-text-color);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footerText b {
+  color: #606060;
+}
+
+.p {
+  margin-top: 5px;
+
+}
+
+@media (max-width: 768px) {
+    .p {
+        margin-top: 20px;
+    }
+}
+
 </style>
-<div class="kapwing-footer-container">
-    <div class="kapwing-footer-column">
-        <div class="footer-company-header">
-            <img
+
+<div class="footer-div">
+    <div class="footer-container">
+        <div class="footer-company">
+            <div class="footer-company-header">
+                <img
                 alt="Kapwing Logo"
-                class="logo"
-                height="50"
+                height=50
                 src="https://cdn-useast1.kapwing.com/static/9XE-logo-small.webp"
-                width="50"
-            />
-            <a href="https://www.kapwing.com">KAPWING</a>
+                width=50
+                />
+                <a href="https//www.kapwing.com">KAPWING</a>
+            </div>
+            <div>
+                <a
+                href="https://twitter.com/KapwingApp"
+                target="_Blank"
+                rel="noopener noreferrer"
+                class="footer-follow-link"
+                title="Twitter"
+                >
+                <div class="footer-instagram-icon-container">
+                    <img
+                    src="https://cdn-useast1.kapwing.com/static/twitter-footer-light.webp"
+                    alt="Twitter"
+                    class="footer-instagram-image"
+                    width="28px"
+                    height="28px"
+                    loading="lazy"
+                    />
+                </div>
+                </a>
+                <a
+                href="https://www.youtube.com/channel/UCR5GrKMeaZJxPKVMdEgKIKA?sub_confirmation=1"
+                target="_Blank"
+                rel="noopener noreferrer"
+                class="footer-follow-link"
+                title="Youtube"
+                >
+                <div class="footer-instagram-icon-container">
+                    <img
+                    src="https://cdn-useast1.kapwing.com/static/yt-footer-light.webp"
+                    alt="Youtube"
+                    class="footer-instagram-image"
+                    width="28px"
+                    height="28px"
+                    loading="lazy"
+                    />
+                </div>
+                </a>
+                <a
+                href="https://www.instagram.com/KapwingApp/"
+                target="_Blank"
+                rel="noopener noreferrer"
+                class="footer-follow-link"
+                title="Instagram"
+                >
+                <div class="footer-instagram-icon-container">
+                    <img
+                    src="https://cdn-useast1.kapwing.com/static/ig-footer-light.webp"
+                    alt="Instagram"
+                    class="footer-instagram-image"
+                    width="28px"
+                    height="28px"
+                    loading="lazy"
+                    />
+                </div>
+                </a>
+                <a
+                href="https://www.tiktok.com/@kapwing"
+                target="_Blank"
+                rel="noopener noreferrer"
+                class="footer-follow-link"
+                title="TikTok"
+                >
+                <div class="footer-instagram-icon-container">
+                    <img
+                    src="https://cdn-useast1.kapwing.com/static/tiktok-footer-light.webp"
+                    alt="TikTok"
+                    class="footer-instagram-image"
+                    width="28px"
+                    height="28px"
+                    loading="lazy"
+                    />
+                </div>
+                </a>
+                <a
+                href="https://www.facebook.com/groups/kapwing"
+                target="_Blank"
+                rel="noopener noreferrer"
+                class="footer-follow-link"
+                title="Facebook"
+                >
+                <div class="footer-instagram-icon-container">
+                    <img
+                    src="https://cdn-useast1.kapwing.com/static/fb-footer-light.webp"
+                    alt="Facebook"
+                    class="footer-instagram-image"
+                    width="28px"
+                    height="28px"
+                    loading="lazy"
+                    />
+                </div>
+                </a>
+            </div>
         </div>
-
-        <a
-            href="https://twitter.com/KapwingApp"
-            target="_Blank"
-            rel="noopener noreferrer"
-            class="footer-follow-link"
-            title="Twitter"
-        >
-            <div class="footer-instagram-icon-container">
-                <img
-                    src="https://cdn-useast1.kapwing.com/static/Uhr-twitter.webp"
-                    alt="Twitter logo"
-                    class="footer-instagram-image"
-                    width="28px"
-                    height="28px"
-                    loading="lazy"
-                />
-            </div>
+        <div class="footer-link-column">
+        <a href="https://www.kapwing.com/tools" class="footer-link-column-header">
+            Tools
         </a>
-        <a
-            href="https://www.youtube.com/channel/UCR5GrKMeaZJxPKVMdEgKIKA?sub_confirmation=1"
-            target="_Blank"
-            rel="noopener noreferrer"
-            class="footer-follow-link"
-            title="Youtube"
-        >
-            <div class="footer-instagram-icon-container">
-                <img
-                    src="https://cdn-useast1.kapwing.com/static/wAA-youtube.webp"
-                    alt="Youtube logo"
-                    class="footer-instagram-image"
-                    width="28px"
-                    height="28px"
-                    loading="lazy"
-                />
-            </div>
-        </a>
-        <a
-            href="https://www.instagram.com/KapwingApp/"
-            target="_Blank"
-            rel="noopener noreferrer"
-            class="footer-follow-link"
-            title="Instagram"
-        >
-            <div class="footer-instagram-icon-container">
-                <img
-                    src="https://cdn-useast1.kapwing.com/static/zUv-instagram.webp"
-                    alt="Instagram logo"
-                    class="footer-instagram-image"
-                    width="28px"
-                    height="28px"
-                    loading="lazy"
-                />
-            </div>
-        </a>
-        <a
-            href="https://www.tiktok.com/@kapwing"
-            target="_Blank"
-            rel="noopener noreferrer"
-            class="footer-follow-link"
-            title="TikTok"
-        >
-            <div class="footer-instagram-icon-container">
-                <img
-                    src="https://cdn-useast1.kapwing.com/static/PKR-tiktok.webp"
-                    alt="TikTok logo"
-                    class="footer-instagram-image"
-                    width="28px"
-                    height="28px"
-                    loading="lazy"
-                />
-            </div>
-        </a>
-        <a
-            href="https://www.facebook.com/groups/kapwing"
-            target="_Blank"
-            rel="noopener noreferrer"
-            class="footer-follow-link"
-            title="Facebook"
-        >
-            <div class="footer-instagram-icon-container">
-                <img
-                    src="https://cdn-useast1.kapwing.com/static/OSz-facebook.webp"
-                    alt="Facebook logo"
-                    class="footer-instagram-image"
-                    width="28px"
-                    height="28px"
-                    loading="lazy"
-                />
-            </div>
-        </a>
-    </div>
-    <div class="kapwing-footer-column">
-        <div class="footer-link-column-header">Tools</div>
         <div class="footer-link-column-links-container">
             <a
-                href="https://www.kapwing.com/video-editor"
-                class="footer-link-column-link"
-            >Video Editor</a>
+            href="https://www.kapwing.com/video-editor"
+            class="footer-link-column-link">
+            Video Editor
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/meme-maker"
-            >Meme Generator</a>
+            href="https://www.kapwing.com/subtitles"
+            class="footer-link-column-link">
+            Subtitles
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/subtitles"
-            >Add Subtitles</a>
+            href="https://www.kapwing.com/meme-maker"
+            class="footer-link-column-link">
+            Meme Generator
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/tools/convert"
-            >Convert Video</a>
+            href="https://www.kapwing.com/tools/convert"
+            class="footer-link-column-link">
+            Convert Video
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/tools/trim"
-            >Video Trimmer</a>
+            href="https://www.kapwing.com/tools/trim"
+            class="footer-link-column-link">
+            Video Trimmer
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/tools/record-screen"
-            >Screen Recorder</a>
+            href="https://www.kapwing.com/tools/record/screen"
+            class="footer-link-column-link">
+            Screen Recorder
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/tools/smart-cut"
-            >Smart Cut</a>
-            <a
-                class="footer-link-column-link footer-link-column-link-last"
-                href="https://www.kapwing.com/tools"
-            >View all tools</a>
-        </div>
-    </div>
-
-    <div class="kapwing-footer-column">
-        <div class="footer-link-column-header">Templates</div>
-        <div class="footer-link-column-links-container">
-            <a
-                href="https://www.kapwing.com/templates"
-                class="footer-link-column-link"
-            >Video Templates</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/meme-templates"
-            >Meme Templates</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/templates/collage"
-            >Collage Templates</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/templates/popular"
-            >Popular Templates</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/templates/edu"
-            >EDU Templates</a>
-            <a
-                class="footer-link-column-link footer-link-column-link-last"
-                href="https://www.kapwing.com/templates"
-            >View all templates</a>
-        </div>
-    </div>
-
-    <div class="kapwing-footer-column">
-        <div class="footer-link-column-header">Learn</div>
-        <div class="footer-link-column-links-container">
-            <a
-                href="https://www.kapwing.com/about"
-                class="footer-link-column-link"
-            >About Us</a>
-            <a
-                href="https://www.kapwing.com/resources"
-                class="footer-link-column-link"
-            >Resources</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/help"
-            >Help Center</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/blog"
+            href="https://www.kapwing.com/tools"
+            class="footer-link-column-link footer-link-column-link-last"
             >
-                Blog</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/edu"
-            >EDU</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/explore"
-            >Explore</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/teams"
-            >Teams</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/contact-us"
-            >Contact Us</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/signin"
-            >Sign In</a>
+            View All
+            </a>
         </div>
-    </div>
+        </div>
+        <div class="footer-link-column">
+        <a href="https://www.kapwing.com/ai" class="footer-link-column-header">
+            AI-powered
+        </a>
+        <div class="footer-link-column-links-container">
+            <a
+            href="https://www.kapwing.com/tools/smart-cut"
+            class="footer-link-column-link">
+            Smart Cut
+            </a>
+            <a
+            href="https://www.kapwing.com/ai-video-generator"
+            class="footer-link-column-link">
+            AI Video Generator
+            </a>
+            <a
+            href="https://www.kapwing.com/tools/remove-background/noise"
+            class="footer-link-column-link">
+            Clean Audio
+            </a>
+            <a
+            href="https://www.kapwing.com/ai/image-generator"
+            class="footer-link-column-link">
+            AI Image Generator
+            </a>
+            <a
+            href="https://www.kapwing.com/meme-maker/ai"
+            class="footer-link-column-link">
+            AI Meme Generator
+            </a>
+            <a
+            href="https://www.kapwing.com/tools/text-to-speech"
+            class="footer-link-column-link">
+            Text to Speech
+            </a>
+            <a
+            href="https://www.kapwing.com/ai/document-to-video"
+            class="footer-link-column-link">
+            Document to video
+            </a>
+            <a
+            href="https://www.kapwing.com/ai"
+            class="footer-link-column-link footer-link-column-link-last"
+            >
+            View All
+            </a>
+        </div>
+        </div>
+        <div class="footer-link-column">
+        <a
+            href="https://www.kapwing.com/templates"
+            class="footer-link-column-header"
+        >
+            Templates
+        </a>
+        <div class="footer-link-column-links-container">
+            <a
+            href="https://www.kapwing.com/templates"
+            class="footer-link-column-link">
+            Video Templates
+            </a>
+            <a
+            href="https://www.kapwing.com/meme-templates"
+            class="footer-link-column-link">
+            Meme Templates
+            </a>
+            <a
+            href="https://www.kapwing.com/templates/collage"
+            class="footer-link-column-link">
+            Collage Templates
+            </a>
+            <a
+            href="https://www.kapwing.com/templates/instagram"
+            class="footer-link-column-link">
+            Instagram Video
+            </a>
+            <a
+            href="https://www.kapwing.com/templates/popular"
+            class="footer-link-column-link">
+            Popular Templates
+            </a>
+            <a
+            href="https://www.kapwing.com/templates/edu"
+            class="footer-link-column-link">
+            EDU Templates
+            </a>
+            <a
+            href="https://www.kapwing.com/templates"
+            class="footer-link-column-link footer-link-column-link-last"
+            >
+            View All
+            </a>
+        </div>
+        </div>
+        <div class="footer-link-column">
+        <div class="footer-link-column-header">Learn</div>
 
-    <div class="kapwing-footer-column">
+        <div class="footer-link-column-links-container">
+            <a href="https://www.kapwing.com/about" class="footer-link-column-link">
+            About Us
+            </a>
+            <a
+            href="https://www.kapwing.com/resources"
+            target="_self"
+            class="footer-link-column-link">
+            Resources
+            </a>
+            <a
+            href="https://www.kapwing.com/help"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="footer-link-column-link">
+            Help Center
+            </a>
+            <a
+            href="https://www.kapwing.com/blog"
+            target="_self"
+            class="footer-link-column-link">
+            Blog
+            </a>
+            <a href="https://www.kapwing.com/edu" class="footer-link-column-link">
+            EDU
+            </a>
+            <a href="https://www.kapwing.com/explore" class="footer-link-column-link">
+            Explore
+            </a>
+            <a href="https://www.kapwing.com/teams" class="footer-link-column-link">
+            Teams
+            </a>
+            <a
+            href="https://www.kapwing.com/contact-us"
+            class="footer-link-column-link">
+            Contact Us
+            </a>
+            <a
+            href="https://www.kapwing.com/signin"
+            class="footer-link-column-link">
+            Sign In
+            </a>
+            
+        </div>
+        </div>
+        <div class="footer-link-column">
         <div class="footer-link-column-header">Company</div>
         <div class="footer-link-column-links-container">
+            <a href="https://www.kapwing.com/pricing" class="footer-link-column-link">
+            Pricing
+            </a>
+            <a href="https://www.kapwing.com/careers" class="footer-link-column-link">
+            Careers
+            </a>
             <a
-                href="https://www.kapwing.com/pricing"
-                class="footer-link-column-link"
-            >Pricing</a>
+            href="https://www.kapwing.com/partnerships"
+            class="footer-link-column-link">
+            Partnerships
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/careers"
-            >Careers</a>
+            href="https://www.kapwing.com/affiliates"
+            class="footer-link-column-link">
+            Affiliates
+            </a>
+            <a href="https://www.kapwing.com/plugins" class="footer-link-column-link">
+            Plugins
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/partnerships"
+            class="footer-link-column-link"
+            href="https://www.kapwing.com/help/tag/release-notes/"
             >
-                Partnerships</a>
+            Release Notes
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/affiliates"
-            >Affiliates</a>
+            href="https://www.kapwing.com/creators-fund"
+            class="footer-link-column-link">
+            Creators Fund
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/plugins"
-            >Plugins</a>
+            href="https://www.kapwing.com/policies/refund"
+            class="footer-link-column-link">
+            Refund Policy
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/help/tag/release-notes/"
-            >Release Notes</a>
+            href="https://www.kapwing.com/policies/privacy"
+            class="footer-link-column-link">
+            Privacy Policy
+            </a>
             <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/creators-fund"
-            >Creators Fund</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/policies/refund"
-            >Refund Policy</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/policies/privacy"
-            >Privacy Policy</a>
-            <a
-                class="footer-link-column-link"
-                href="https://www.kapwing.com/policies/terms-of-service"
-            >Terms of Service</a>
+            href="https://www.kapwing.com/policies/terms-of-service"
+            class="footer-link-column-link">
+            Terms of Service
+            </a>
+        </div>
         </div>
     </div>
+    <div class="footerText">
+        &copy; Kapwing. Made with love in San Francisco, California.
+    </div>
 </div>
+
+

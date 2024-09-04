@@ -77,6 +77,14 @@ Once the disk itself has been increased, you have to repartition your VM to reco
 - Resize your file system : `sudo resize2fs /dev/sda1`
 - Verify : `df -h`
 
+### Configuring Ghost MySQL
+
+To configure ghost mysql (oftentimes because a migration fails), you may need to login directly to the database and run some commands.
+
+The mysql database for the blog and help sites is hosted on Google Cloud. You can find them in Google Cloud Console in the [sql instances page](https://console.cloud.google.com/sql/instances?project=kapwing-181323).
+
+To manage the database connection user and password, you can check the Ghost config file, located at `/var/www/ghost/config.production.json`.
+
 ## Managing Help Center Ghost
 
 To manage the help center Ghost deployment, you must access the machine where it is hosted on google cloud. You can read the full instructions here: https://docs.google.com/document/d/1oDY3-kvi_DGZ4t2sBy2I93oHFT7e8IKQfkQlq21Skh0/edit#

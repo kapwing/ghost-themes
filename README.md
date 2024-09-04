@@ -66,6 +66,17 @@ Sometimes this doesn't work if the machine has not enough free space. I usually 
 
 `ghostuser@company-blog-ssl:/var/www/ghost$ du -ah . | sort -rh | head -20`
 
+If the machine itself is out of space, you can increase the disk size from Google Cloud. Go to the [disks page](https://console.cloud.google.com/compute/disks?project=kapwing-181323) on Google Cloud and find the relevant machine.
+
+You can click edit to increase the disk size to a larger size.
+
+Once the disk itself has been increased, you have to repartition your VM to recognize the larger disk. I followed [this stackoverflow question](https://stackoverflow.com/questions/43747789/resizing-dev-sda1-google-cloud) to solve this problem.
+
+- Increase disk size from console first
+- SSH inside VM : `sudo growpart /dev/sda 1`
+- Resize your file system : `sudo resize2fs /dev/sda1`
+- Verify : `df -h`
+
 ## Managing Help Center Ghost
 
 To manage the help center Ghost deployment, you must access the machine where it is hosted on google cloud. You can read the full instructions here: https://docs.google.com/document/d/1oDY3-kvi_DGZ4t2sBy2I93oHFT7e8IKQfkQlq21Skh0/edit#

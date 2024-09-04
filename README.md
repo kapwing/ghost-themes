@@ -85,6 +85,8 @@ The mysql database for the blog and help sites is hosted on Google Cloud. You ca
 
 To manage the database connection user and password, you can check the Ghost config file, located at `/var/www/ghost/config.production.json`.
 
+To update the database, I had to follow the instructions on this page: https://ghost.org/docs/faq/supported-databases/.
+
 ## Managing Help Center Ghost
 
 To manage the help center Ghost deployment, you must access the machine where it is hosted on google cloud. You can read the full instructions here: https://docs.google.com/document/d/1oDY3-kvi_DGZ4t2sBy2I93oHFT7e8IKQfkQlq21Skh0/edit#

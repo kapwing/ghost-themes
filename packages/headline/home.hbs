@@ -24,44 +24,54 @@
             </footer>
         </section>
 
-        {{#if @custom.enter_tag_slugs_for_primary_sections}}
-            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
+        {{!-- the way ghost orders these tags in the db doesn't allow custom ordering, so we have to hardcode them --}}
+        {{#get "tags" filter="slug:video-editing" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+        {{#get "tags" filter="slug:content-creator" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+        {{#get "tags" filter="slug:social-media" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+        {{#get "tags" filter="slug:ai" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+        {{#get "tags" filter="slug:design" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+        {{#get "tags" filter="slug:caption" limit="1"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+
+        <div class="gh-topic-list">
+            {{#get "tags" filter="slug:youtube"}}
                 {{#foreach tags}}
-                    {{> "topic-grid"}}
+                    {{> "topic-minimal"}}
                 {{/foreach}}
             {{/get}}
-        {{else}}
-            {{#match posts.length ">" 1}}
-                {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
-                    {{#foreach tags}}
-                        {{> "topic-grid"}}
-                    {{/foreach}}
-                {{/get}}
-            {{/match}}
-        {{/if}}
-
-        {{#if @custom.enter_tag_slugs_for_secondary_sections}}
-            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
-                {{#if tags}}
-                    <div class="gh-topic-list">
-                        {{#foreach tags}}
-                            {{> "topic-minimal"}}
-                        {{/foreach}}
-                    </div>
-                {{/if}}
+            {{#get "tags" filter="slug:tiktok"}}
+                {{#foreach tags}}
+                    {{> "topic-minimal"}}
+                {{/foreach}}
             {{/get}}
-        {{else}}
-            {{#match posts.length ">" 1}}
-                {{#get "tags" include="count.posts" order="count.posts desc"}}
-                    {{#if tags.[3]}}
-                        <div class="gh-topic-list">
-                            {{#foreach tags from="4" limit="3"}}
-                                {{> "topic-minimal"}}
-                            {{/foreach}}
-                        </div>
-                    {{/if}}
-                {{/get}}
-            {{/match}}
-        {{/if}}
+            {{#get "tags" filter="slug:instagram"}}
+                {{#foreach tags}}
+                    {{> "topic-minimal"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
     </div>
 </main>
